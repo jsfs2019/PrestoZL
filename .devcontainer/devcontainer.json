@@ -5,10 +5,10 @@
 	"containerEnv": {
 		"TZ": "Asia/Shanghai",
 		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
-		"CONTAINER_WORKSPACE_FOLDER": "${containerWorkspaceFolder}"
+		"CONTAINER_WORKSPACE_FOLDER": "/home/soft/presto"
 	},
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "cuda:11.7.1-devel-ubuntu20.04",
+	"image": "nvcr.io/nvidia/cuda:11.7.1-devel-ubuntu20.04",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
@@ -41,5 +41,8 @@
 	// More info: https://containers.dev/implementors/json_reference/#port-attributes
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sh .devcontainer/commands/post-create-command.sh"
+	"postCreateCommand": "sh .devcontainer/commands/post-create-command.sh",
+	
+	// Set the workspace folder to /home/soft/presto
+	"workspaceFolder": "/home/soft/presto"
 }
